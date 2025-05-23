@@ -258,4 +258,31 @@ export default {
   object-fit: cover; /* Cambiado de 'contain' a 'cover' */
   scroll-snap-align: start;
 }
+/* Estilos para Móvil */
+.mobile-carousel {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-carousel img {
+  width: 100%;
+  height: auto;  /* Cambiado de 100vh a auto */
+  aspect-ratio: 9/16; /* Ajusta según la relación de aspecto de tus imágenes */
+  object-fit: contain; /* Vuelve a contain para mostrar toda la imagen */
+  scroll-snap-align: start;
+  flex-shrink: 0; /* Evita que se reduzcan las imágenes */
+}
+
+/* Media query para orientación horizontal en móvil */
+@media (max-width: 768px) and (orientation: landscape) {
+  .mobile-carousel img {
+    height: 100vh;
+    width: auto;
+    aspect-ratio: 16/9; /* Ajusta para orientación horizontal */
+  }
+}
 </style>
